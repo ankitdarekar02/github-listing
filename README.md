@@ -2,6 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.5.
 
+# Steps to Use the Application
+
+1) On the landing page you will see a search box where the user can enter the username of the github profiles.
+2) After searching for the username you can see the profile details of the user as well as their repositories on github.
+3) Maximum of 8 repositories are shown on each page which can be traversed using the pagination.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
