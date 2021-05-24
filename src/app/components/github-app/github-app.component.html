@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="form-wrapper">
+        <form class="form-inline" (submit)="searchUser()">
+          <div class="form-group">
+            <label for="username" class="mr-md-2 mr-sm-2">Search Github User: </label>
+            <input size="50" name="username" type="search" class="form-control" placeholder="username"
+            [(ngModel)]="searchText">
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-sm btn-primary ml-md-2 ml-sm-0">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="row mt-3" *ngIf="(userProfileData | keyvalue)?.length">
+    <div class="col">
+      <github-profile [profile]="userProfileData"></github-profile>
+    </div>
+  </div>
+  <div class="row mt-3" *ngIf="userProfileRepo.length > 0">
+    <div class="col">
+      <h4>Github Repositories</h4>
+      <user-repository [list]="userProfileRepo" [totalRepos]="userProfileData.public_repos" (callback)="pageChangeCallback($event)"></user-repository>
+    </div>
+  </div>
+  <div class="row" *ngIf="profileLoader">
+    <div class="col-md-3">
+      <skeleton-loader appearance="circle" [config]="{ height: '200px' , width: '100%'}">
+			</skeleton-loader>
+    </div>
+    <div class="col-md-9">
+      <skeleton-loader [count]="5" [config]="{ 'border-radius': '0', height: '30px'}"></skeleton-loader>
+    </div>
+  </div>
+  <div class="row mt-3" *ngIf="repoLoader">
+    <div class="col">
+      <div>
+        <skeleton-loader [count]="1" [config]="{ 'border-radius': '0', height: '30px', width: '100px' }"></skeleton-loader>
+      </div>
+      <div class="row">
+        <div class="col-md-6 col-sm-12">
+          <skeleton-loader [count]="1" [config]="{ 'border-radius': '0', height: '50px' }"></skeleton-loader>
+        </div>
+        <div class="col-md-6 col-sm-12">
+          <skeleton-loader [count]="1" [config]="{ 'border-radius': '0', height: '50px' }"></skeleton-loader>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="row" *ngIf="list && list.length > 0">
+  <div class="col-md-6 col-sm-12" *ngFor="let item of list | paginate : {itemsPerPage : 8, currentPage: p, totalItems: totalRepos}">
+    <div class="card repo-card">
+      <h4 class="text-primary"><a [href]="item.html_url" target="_blank">{{item.name}}</a></h4>
+      <h6>{{item.description ? item.description : "--"}}</h6>
+      <div class="description">
+        <div class="badge badge-primary mr-3">{{item.language}}</div>
+        <div class="badge badge-secondary mr-3">{{item.watchers}} watchers</div>
+        <div class="badge badge-danger mr-3">{{item.open_issues}} Open Issues</div>
+      </div>
+      <div>Last Updated on <span class="h6">{{item.updated_at | date: 'dd/MM/yyyy'}}</span></div>
+    </div>
+  </div>
+</div>
+<div class="row" *ngIf="list.length <= 0">
+  <div class="col">
+    <div>
+      <skeleton-loader [count]="1" [config]="{ 'border-radius': '0', height: '30px', width: '100px' }"></skeleton-loader>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <skeleton-loader [count]="1" [config]="{ 'border-radius': '0', height: '50px' }"></skeleton-loader>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <skeleton-loader [count]="1" [config]="{ 'border-radius': '0', height: '50px' }"></skeleton-loader>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <div class="pagination-wrapper">
+      <pagination-controls (pageChange)="onPageChange($event)"></pagination-controls>
+    </div>
+  </div>
+</div>

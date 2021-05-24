@@ -1,0 +1,23 @@
+<div class="card" *ngIf="data">
+  <div class="card-header">
+    <h2>{{data.name}}</h2>
+    <div>
+      <span class="badge badge-primary mr-3">{{data.followers}} Followers</span>
+      <span class="badge badge-success mr-3">{{data.public_repos}} Respositories</span>
+      <span class="badge badge-danger mr-3">{{data.public_gists}} Gists</span>
+      <span class="badge badge-warning mr-3">{{data.following}} Following</span>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5>{{data.bio}}</h5>
+    <ul class="list-group">
+      <li>Location: {{data.location}}</li>
+      <li>Blog:
+        <span><a [href]="data.blog" target="_blank">{{data.blog}}</a></span>
+      </li>
+      <li>Company : {{data.company}}</li>
+      <li>Email: {{data.email}}</li>
+      <li>Twitter: {{data.twitter_username}}</li>
+    </ul>
+  </div>
+</div>

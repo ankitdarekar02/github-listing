@@ -1,0 +1,10 @@
+<div class="container-fluid" *ngIf="profile">
+  <div class="row">
+    <div class="col-md-4 col-sm-12">
+      <github-profile-card [data]="profile"></github-profile-card>
+    </div>
+    <div class="col-md-8 col-sm-12">
+      <github-profile-details [data]="profile"></github-profile-details>
+    </div>
+  </div>
+</div>
