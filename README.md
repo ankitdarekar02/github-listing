@@ -6,7 +6,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 1) On the landing page you will see a search box where the user can enter the username of the github profiles.
 2) After searching for the username you can see the profile details of the user as well as their repositories on github.
-3) Maximum of 8 repositories are shown on each page which can be traversed using the pagination.
+3) Maximum of 8 repositories are shown on each page which can be traversed using the server side pagination.
+
+# API Reference used
+https://docs.github.com/en/rest/reference
 
 ## Development server
 
