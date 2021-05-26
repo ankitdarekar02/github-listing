@@ -12,8 +12,6 @@ export class SkeletonLoaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.count,'count');
-    console.log(this.config,'config');
   }
 
 }

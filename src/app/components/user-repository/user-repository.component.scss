@@ -1,9 +1,19 @@
 .repo-card {
   padding: 10px 15px;
   margin-bottom: 10px;
-  height: 150px;
+  height: 160px;
+  overflow: auto;
 }
 
+.truncate-text-v-2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  min-height: 20px;
+  max-height: 40px;
+}
 .pagination-wrapper {
   display: flex;
   align-items: center;

@@ -11,6 +11,7 @@ export class GithubService {
 
   constructor(private httpClient: HttpClient) { }
 
+
   getUserProfile(username): Observable<any> {
     const profileUrl = `https://api.github.com/users/${username}`;
     return this.httpClient.get<any>(profileUrl).pipe(
@@ -21,7 +22,9 @@ export class GithubService {
 
   getUserRepositories(username, pageNumber): Observable<any[]> {
     const profileRepos = `https://api.github.com/users/${username}/repos?per_page=8&page=${pageNumber}`;
-    return this.httpClient.get<any[]>(profileRepos).pipe(
+    return this.httpClient.get<any[]>(profileRepos, {
+      headers: new HttpHeaders().set('Accept', 'application/vnd.github.mercy-preview+json'),
+  }).pipe(
       retry(1),
       catchError(this.handleError)
     )
