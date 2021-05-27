@@ -14,7 +14,7 @@
     </div>
   </div>
 </div>
-<div class="row" *ngIf="list.length <= 0">
+<div class="row" *ngIf="list && list.length <= 0">
   <div class="col">
     <div>
       <skeleton-loader [count]="1" [config]="{ 'border-radius': '0', height: '30px', width: '100px' }"></skeleton-loader>

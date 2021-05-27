@@ -8,12 +8,14 @@ import { throwError } from 'rxjs/internal/observable/throwError';
   providedIn: 'root'
 })
 export class GithubService {
-
+  BASE_URL = 'https://api.github.com/users/';
+  username: string;
   constructor(private httpClient: HttpClient) { }
 
-
   getUserProfile(username): Observable<any> {
-    const profileUrl = `https://api.github.com/users/${username}`;
+    this.username = username;
+    // const profileUrl = `https://api.github.com/users/${username}`;
+    const profileUrl = this.BASE_URL + this.username;
     return this.httpClient.get<any>(profileUrl).pipe(
       retry(1),
       catchError(this.handleError)
@@ -21,7 +23,8 @@ export class GithubService {
   }
 
   getUserRepositories(username, pageNumber): Observable<any[]> {
-    const profileRepos = `https://api.github.com/users/${username}/repos?per_page=8&page=${pageNumber}`;
+    this.username = username;
+    const profileRepos = this.BASE_URL + `${this.username}/repos?per_page=8&page=${pageNumber}`;
     return this.httpClient.get<any[]>(profileRepos, {
       headers: new HttpHeaders().set('Accept', 'application/vnd.github.mercy-preview+json'),
   }).pipe(

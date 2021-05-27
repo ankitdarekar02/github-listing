@@ -1,3 +1,4 @@
+import { GithubService } from './services/github.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,7 +14,6 @@ import { GithubProfileCardComponent } from './components/github-profile-card/git
 import { GithubProfileDetailsComponent } from './components/github-profile-details/github-profile-details.component';
 import { SkeletonLoaderComponent } from './components/skeleton-loader/skeleton-loader.component';
 import { NgxPaginationModule } from 'ngx-pagination';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,15 +25,15 @@ import { NgxPaginationModule } from 'ngx-pagination';
     SkeletonLoaderComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     FormsModule,
     NgxPaginationModule,
     NgbModule,
     NgxSkeletonLoaderModule,
-    HttpClientModule,
     AppRoutingModule
   ],
-  providers: [HttpClient],
+  providers: [GithubService, HttpClient],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
   bootstrap: [AppComponent]
 })
