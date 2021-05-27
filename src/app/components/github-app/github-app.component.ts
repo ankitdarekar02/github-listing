@@ -32,7 +32,6 @@ export class GithubAppComponent implements OnInit {
       this.repoLoader = false;
     },(err: any) => {
       this.userProfileRepo = [];
-      console.log("no repositories found");
     });
   }
 
@@ -43,7 +42,6 @@ export class GithubAppComponent implements OnInit {
       this.profileLoader = false;
     },(err: any) => {
       this.userProfileData = {};
-      console.log("no such profile found");
     });
   }
 
