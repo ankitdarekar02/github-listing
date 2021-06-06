@@ -8,6 +8,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 2) After searching for the username you can see the profile details of the user as well as their repositories on github.
 3) Maximum of 8 repositories are shown on each page which can be traversed using the server side pagination.
 
+
+# URL link
+https://sleepy-kepler-815b5b.netlify.app/
+
 # API Reference used
 https://docs.github.com/en/rest/reference
 
