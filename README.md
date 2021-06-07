@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 
 # URL link
-https://sleepy-kepler-815b5b.netlify.app/
+https://github-listing.netlify.app/
 
 # API Reference used
 https://docs.github.com/en/rest/reference
