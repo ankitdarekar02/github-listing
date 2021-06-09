@@ -31,7 +31,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-1)Githun service file :  The test case checks whether a get request is being made for fetching the user profile data and is being executed without any error.
+1)Github service file :  The test case checks whether a get request is being made for fetching the user profile data and is being executed without any error.
 
 2)Github App Component : This test case verifies whether the fetched user profile data is being assigned back to the variable in the component, and also checks whether the loader is hidden after fetching of the data is successful.
   
